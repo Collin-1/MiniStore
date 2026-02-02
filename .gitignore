@@ -1,0 +1,57 @@
+# =========================
+# .NET / ASP.NET Core
+# =========================
+bin/
+obj/
+
+# Build results
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]ny [Cc][Pp][Uu]/
+
+# Test results
+TestResults/
+
+# =========================
+# ASP.NET Core
+# =========================
+# User-specific secrets
+**/appsettings.Development.json
+**/appsettings.Local.json
+secrets.json
+
+# IIS / publish output
+*.Publish.xml
+*.pubxml
+*.pubxml.user
+publish/
+
+# =========================
+# Visual Studio
+# =========================
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# =========================
+# Rider / VS Code
+# =========================
+.idea/
+.vscode/
+*.swp
+
+# =========================
+# OS junk
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
