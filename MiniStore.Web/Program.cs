@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MiniStore.Web.Infrastructure.Data;
+using MiniStore.Web.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<ICatalogService, CatalogService>();
 
 var app = builder.Build();
 
