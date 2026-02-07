@@ -1,0 +1,23 @@
+@model List<MiniStore.Web.Models.ViewModels.ProductListItemVm>
+
+<h2>Catalog</h2>
+
+<table class="table">
+    <thead>
+        <th>Name</th>
+        <th class="text-end">Price</th>
+        <th></th>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td class="text-end">@p.Price.ToString("C")</td>
+                <td>
+                    <a class="btn btn-sm btn-primary" asp-action="Details" asp-route-id="@p.Id">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
