@@ -14,11 +14,11 @@ public class CatalogController : Controller
 
     public async Task<IActionResult> Index()
     {
-        products = await _catalog.GetProductsAsync();
+        var products = await _catalog.GetProductsAsync();
         return View(products);
     }
 
-    public async Task<IActionResult> Details()
+    public async Task<IActionResult> Details(int id)
     {
         var product = await _catalog.GetProductAsync(id);
         if (product is null) return NotFound();
