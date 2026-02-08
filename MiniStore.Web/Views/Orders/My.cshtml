@@ -1,0 +1,10 @@
+@model List<object>
+
+<h2>My Orders</h2>
+
+<ul>
+@foreach (dynamic o in Model)
+{
+    <li>#@o.Id - @o.CreatedUtc - Total: @o.Total</li>
+}
+</ul>
