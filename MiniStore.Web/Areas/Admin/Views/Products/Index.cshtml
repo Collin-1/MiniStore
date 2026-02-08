@@ -1,0 +1,28 @@
+@model List<MiniStore.Web.Domain.Entities.Product>
+
+<h2>Admin - Products</h2>
+
+<a class="btn btn-primary" asp-action="Create">New Product</a>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th class="text-end">Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Name</td>
+            <td class="text-end">@p.Price.ToString("C")</td>
+            <td class="text-end">
+                <a class="btn btn-sm btn-secondary" asp-action="Edit" asp-route-id="@p.Id">Edit</a>
+                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@p.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
