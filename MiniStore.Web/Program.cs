@@ -24,6 +24,8 @@ builder.Services
 
 var app = builder.Build();
 
+await IdentitySeeder.SeedAsync(app.Services);
+
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
