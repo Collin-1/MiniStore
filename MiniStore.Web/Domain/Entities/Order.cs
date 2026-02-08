@@ -14,7 +14,7 @@ public class Order
     {
         public int Id {get; set;}
         public int ProductId {get; set;}
-        public string ProdcutNameSnapshot { get; set;} = "";
+        public string ProductNameSnapshot { get; set;} = "";
         public decimal UnitPriceSnapshot {get; set;}
         public int Quantity {get; set;}
     }

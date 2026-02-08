@@ -314,12 +314,12 @@ namespace MiniStore.Web.Migrations
                             b1.Property<int>("OrderId")
                                 .HasColumnType("INTEGER");
 
-                            b1.Property<string>("ProdcutNameSnapshot")
-                                .IsRequired()
-                                .HasColumnType("TEXT");
-
                             b1.Property<int>("ProductId")
                                 .HasColumnType("INTEGER");
+
+                            b1.Property<string>("ProductNameSnapshot")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
 
                             b1.Property<int>("Quantity")
                                 .HasColumnType("INTEGER");

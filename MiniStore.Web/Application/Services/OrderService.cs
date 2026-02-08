@@ -24,7 +24,7 @@ public class OrderService : IOrderService
             UserId = userId,
             Items =
             {
-                new OrderItem
+                new Order.OrderItem
                 {
                     ProductId = product.Id,
                     ProductNameSnapshot = product.Name,
