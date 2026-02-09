@@ -1,10 +1,34 @@
-@model List<object>
+@model List<MiniStore.Application.ViewModels.OrderSummaryVm>
 
 <h2>My Orders</h2>
 
-<ul>
-@foreach (dynamic o in Model)
+@if (Model.Count == 0)
 {
-    <li>#@o.Id - @o.CreatedUtc - Total: @o.Total</li>
+    <p>You haven’t placed any orders yet. Visit the <a asp-controller="Catalog" asp-action="Index">catalog</a> to get started.</p>
 }
-</ul>
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order</th>
+                <th>Date</th>
+                <th class="text-end">Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>#@order.Id</td>
+                <td>@order.CreatedUtc.ToLocalTime().ToString("g")</td>
+                <td class="text-end">@order.Total.ToString("C")</td>
+                <td class="text-end">
+                    <a class="btn btn-sm btn-outline-secondary" asp-action="Details" asp-route-id="@order.Id">Details</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
