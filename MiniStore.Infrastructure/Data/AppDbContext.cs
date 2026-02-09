@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using MiniStore.Web.Domain.Entities;
+using MiniStore.Domain.Entities;
 
-namespace MiniStore.Web.Infrastructure.Data;
+namespace MiniStore.Infrastructure.Data;
 
 public class AppDbContext : IdentityDbContext
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {}
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
     public DbSet<Product> Products => Set<Product>();
     public DbSet<Order> Orders => Set<Order>();

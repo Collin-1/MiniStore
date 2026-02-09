@@ -1,4 +1,4 @@
-namespace MiniStore.Web.Models.ViewModels;
+namespace MiniStore.Application.ViewModels;
 
 public class CheckoutVm
 {

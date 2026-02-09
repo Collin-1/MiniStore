@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MiniStore.Web.Domain.Entities;
-using MiniStore.Web.Infrastructure.Data;
+using MiniStore.Domain.Entities;
+using MiniStore.Infrastructure.Data;
 
 namespace MiniStore.Web.Areas.Admin.Controllers;
 

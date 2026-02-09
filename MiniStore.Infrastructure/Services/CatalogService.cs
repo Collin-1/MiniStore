@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using MiniStore.Web.Infrastructure.Data;
-using MiniStore.Web.Models.ViewModels;
+using MiniStore.Application.Services;
+using MiniStore.Application.ViewModels;
+using MiniStore.Infrastructure.Data;
 
-namespace MiniStore.Web.Application.Services;
+namespace MiniStore.Infrastructure.Services;
 
 public class CatalogService : ICatalogService
 {
@@ -15,12 +16,15 @@ public class CatalogService : ICatalogService
 
     public async Task<List<ProductListItemVm>> GetProductsAsync()
     {
-        return await _db.Products.OrderBy(p => p.Name).Select(p => new ProductListItemVm
-        {
-            Id = p.Id,
-            Name = p.Name,
-            Price = p.Price
-        }).ToListAsync();
+        return await _db.Products
+            .OrderBy(p => p.Name)
+            .Select(p => new ProductListItemVm
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Price = p.Price
+            })
+            .ToListAsync();
     }
 
     public async Task<ProductDetailsVm?> GetProductAsync(int id)

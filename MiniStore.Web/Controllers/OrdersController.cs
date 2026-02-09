@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using MiniStore.Web.Application.Services;
-using MiniStore.Web.Models.ViewModels;
+using MiniStore.Application.Services;
+using MiniStore.Application.ViewModels;
 
 namespace MiniStore.Web.Controllers;
 

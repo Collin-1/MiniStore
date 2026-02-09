@@ -1,9 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using MiniStore.Web.Domain.Entities;
-using MiniStore.Web.Infrastructure.Data;
-using MiniStore.Web.Models.ViewModels;
+using MiniStore.Application.Services;
+using MiniStore.Application.ViewModels;
+using MiniStore.Domain.Entities;
+using MiniStore.Infrastructure.Data;
 
-namespace MiniStore.Web.Application.Services;
+namespace MiniStore.Infrastructure.Services;
 
 public class OrderService : IOrderService
 {

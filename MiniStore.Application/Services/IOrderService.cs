@@ -1,6 +1,6 @@
-using MiniStore.Web.Models.ViewModels;
+using MiniStore.Application.ViewModels;
 
-namespace MiniStore.Web.Application.Services;
+namespace MiniStore.Application.Services;
 
 public interface IOrderService
 {
