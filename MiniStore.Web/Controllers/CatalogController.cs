@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using MiniStore.Web.Application.Services;
+using MiniStore.Application.Services;
 
-namespace Ministore.Web.Controllers;
+namespace MiniStore.Web.Controllers;
 
 public class CatalogController : Controller
 {

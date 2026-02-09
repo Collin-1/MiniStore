@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace MiniStore.Web.Infrastructure.Data;
+namespace MiniStore.Infrastructure.Data;
 
 public static class IdentitySeeder
 {

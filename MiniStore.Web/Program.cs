@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using MiniStore.Web.Infrastructure.Data;
-using MiniStore.Web.Application.Services;
+using MiniStore.Application.Services;
+using MiniStore.Infrastructure.Data;
+using MiniStore.Infrastructure.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
