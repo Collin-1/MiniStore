@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 builder.Services.AddScoped<IOrderService, OrderService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -61,6 +62,8 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "areas",
     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+app.MapRazorPages();
 
 // app.MapControllerRoute(
 //     name: "default",

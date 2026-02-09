@@ -40,17 +40,30 @@ public class OrderService : IOrderService
         return order.Id;
     }
 
-    public async Task<List<object>> GetMyOrdersAsync(string userId)
+    public async Task<List<OrderSummaryVm>> GetMyOrdersAsync(string userId)
     {
         return await _db.Orders
             .Where(o => o.UserId == userId)
             .OrderByDescending(o => o.CreatedUtc)
-            .Select(o => new
+            .Select(o => new OrderSummaryVm
             {
-                o.Id,
-                o.CreatedUtc,
+                Id = o.Id,
+                CreatedUtc = o.CreatedUtc,
                 Total = o.Items.Sum(i => i.UnitPriceSnapshot * i.Quantity)
-            } as object)
+            })
             .ToListAsync();
+    }
+
+    public async Task<OrderSummaryVm?> GetOrderSummaryAsync(int orderId, string userId)
+    {
+        return await _db.Orders
+            .Where(o => o.Id == orderId && o.UserId == userId)
+            .Select(o => new OrderSummaryVm
+            {
+                Id = o.Id,
+                CreatedUtc = o.CreatedUtc,
+                Total = o.Items.Sum(i => i.UnitPriceSnapshot * i.Quantity)
+            })
+            .FirstOrDefaultAsync();
     }
 }

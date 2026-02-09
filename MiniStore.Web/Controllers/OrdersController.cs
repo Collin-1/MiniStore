@@ -38,9 +38,13 @@ public class OrdersController : Controller
         return View(orders);
     }
 
-    public IActionResult Details(int id)
+    public async Task<IActionResult> Details(int id)
     {
-        // keep simple: you can implement later with a details VM
-        return Content($"Order created! ID = {id}");
+        var user = await _userManager.GetUserAsync(User);
+        if (user is null) return Challenge();
+
+        var order = await _orders.GetOrderSummaryAsync(id, user.Id);
+        if (order is null) return NotFound();
+        return View(order);
     }
 }
